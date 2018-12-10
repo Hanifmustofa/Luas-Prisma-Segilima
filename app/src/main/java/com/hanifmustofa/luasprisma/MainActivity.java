@@ -12,9 +12,10 @@ public class MainActivity extends AppCompatActivity {
 
     EditText input_Luas_Alas, input_Luas_Selimut;
     Button hitung;
-    TextView text_luas, keterangan_luas;
+    TextView  keterangan_luas;
     String luas="hasil dari luas prisma segilima adalah";
     int hasil, luas_alas, luas_selimut;
+    boolean valid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         keterangan_luas=(TextView) findViewById(R.id.keterangan_luas);
         input_Luas_Alas=(EditText)findViewById(R.id.input_Luas_Alas);
         input_Luas_Selimut=(EditText)findViewById(R.id.input_Luas_Selimut);
-        text_luas=(EditText)findViewById(R.id.keterangan_luas);
         hitung=(Button) findViewById(R.id.permukaan);
 
         hitung.setOnClickListener(new View.OnClickListener() {
@@ -49,5 +49,18 @@ public class MainActivity extends AppCompatActivity {
         keterangan_luas.setText("2 x (5 x " + input_Luas_Alas.getText().toString() + ") + 5 x (" + input_Luas_Alas.getText().toString() + " x " + input_Luas_Selimut.getText().toString() + ") = " + String.valueOf(hasil));
 
 
+    }
+    public boolean isValid(){
+
+        if (input_Luas_Alas.getText().toString().isEmpty()) {
+            input_Luas_Alas.setError("Masukkan Sisi");
+            valid = false;
+        } else if (input_Luas_Selimut.getText().toString().isEmpty()) {
+            input_Luas_Selimut.setError("Masukkan Tinggi");
+            valid = false;
+        } else {
+            valid = true;
+        }
+        return valid;
     }
 }
