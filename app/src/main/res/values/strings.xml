@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Luas Prisma</string>
+    <string name="Luas_permukaan_prisma_segilima">Luas Permukaan Balok</string>
+    <string name="Sisi"></string>
+    <string name="Masukkan_sisi">Masukkan Sisi </string>
+    <string name="Tinggi"></string>
+    <string name="Masukkan_tinggi">Masukkan Tinggi</string>
+    
+</resources>
